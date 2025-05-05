@@ -1,0 +1,85 @@
+/* ContactStyles.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espaçamento vertical entre os campos */
+  padding: 20px; /* Adiciona padding interno ao formulário */
+  width: auto;
+  margin: 0;
+  height: auto;
+}
+
+textarea,
+input:not([type="submit"]) {
+  height: 50px;
+  padding-left: 16px;
+  width: 100%; /* Corrige para largura total, ajustável */
+  box-sizing: border-box; /* Garante que padding não aumente o tamanho */
+}
+
+textarea {
+  padding-top: 16px;
+  resize: none; /* Impede redimensionamento */
+  height: 250px; /* Altura específica para textarea */
+}
+
+input,
+textarea {
+  border-radius: 20px;
+  border: 1px solid #888;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--form-text-color);
+}
+
+::placeholder {
+  color: var(--form-text-color);
+}
+
+input[type="submit"] {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  width: 126px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Corrigido de 4ppx 4ox */
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  margin: 0 auto; /* Centraliza o botão */
+  cursor: pointer; /* Indica que é clicável */
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25); /* Ajustado para efeito de clique */
+  transform: translateY(2px);
+}
+
+@media (width >= 800px) {
+  textarea,
+  input:not([type="submit"]) {
+    width: 600px;
+    font-size: 20px;
+  }
+  form {
+    gap: 40px;
+  }
+}
+
+@media (width >= 1400px) {
+  textarea,
+  input:not([type="submit"]) {
+    width: 800px;
+  }
+}
